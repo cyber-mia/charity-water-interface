@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
+
+:root {
+    --primary-color: #ffc907;
+    --secondary-color: #2e9df7;
+    --secondary-color-dark: #0d65ac;
+    --text-dark: #333333;
+    --white: #ffffff;
+    --max-width: 1200px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: flex;
+    width: 100%
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: "Proxima-Nova", sans-serif;
+}
+
+
+nav {
+    position: fixed;
+    isolation: isolate;
+    width: 100%;
+    z-index: 9;
+}
+
+.nav__header {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+}
+
+.nav__logo a img {
+    max-width: 300px;
+}
+
+.nav__logo .logo-dark {
+  display: none;
+}
+
+.nav__menu__btn {
+    font-size: 1.5rem;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.nav__links {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: var(--primary-color);
+    transition: transform 0.5s;
+    z-index: -1;
+}
+
+.nav__links.open {
+    transform: translateY(100%);
+}
+
+.nav__links a {
+    font-weight: 500;
+    color: var(--white);
+    white-space: nowrap;
+}
+
+body, html {
+    height: 100%;
+}
+
+.hero-image {
+  background-image: url("assets/7533_Ethiopia_2019_CG-.jpg");
+
+  height: 50%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero__btn {
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.hero__btn button {
+    padding: 1rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white);
+    background-color: var(--secondary-color);
+    border-radius: 5rem;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.hero__btn button:hover {
+    background-color: var(--secondary-color-dark);
+}
+
+@media (width > 768px) {
+    nav {
+        position: static;
+        padding: 2rem 1rem 1rem;
+        max-width: var(--max-width);
+        margin-inline: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav__header {
+        padding: 0;
+        background-color: transparent;
+    }
+
+    .nav__logo a img {
+        max-width: 125px;
+    }
+
+    .nav__logo .logo-dark {
+        display: flex;
+    }
+
+    .nav__logo .logo-white {
+        display: none;
+    }
+
+    .nav__menu__btn {
+        display: none;
+    }
+
+    .nav__links {
+        position: static;
+        width: fit-content;
+        padding: 0;
+        flex-direction: row;
+        background-color: transparent;
+        transform: none !important;
+    }
+
+    .nav__links a {
+        font-weight: 600;
+        color: var(--text-dark);
+    }
+
+    .nav__links a:hover {
+        color: var(--primary-color);
+    }
+
+    .hero-image {
+        grid-area: 1/1/2/2;
+    }
+}
